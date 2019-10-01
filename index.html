@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--     <link rel="stylesheet" href="css/index.css"> -->
+
+    <link rel="stylesheet" href="css/index.css">
+    <title>Amemezing News</title>
+</head>
+
+<body>
+<main>
+    
+<!-- START OF HEADER CONTAINER // NAVIGATION --> 
+<header id="topheader">
+    <img id=topNewsBtn class="newsbutton" src="./img/news-icon.png" alt="icon">
+    <div class="siteName">
+        <h1>Amemezing News</h1>
+    </div>
+
+    
+     
+        <!-- <div class="icon">
+            <img id=entBtn src="./img/entmt-icon.png" alt="icon">
+        </div> -->
+        <!-- <div class="icon">
+            <img id=sportsBtn src="./img/sport-icon.png" alt="icon">
+        </div> -->
+        <!-- <div class="icon">
+            <img id=techBtn src="./img/tech-icon.png" alt="icon">
+        </div> -->
+    
+<!-- NEWS MODAL -->
+    <div id="topNewsModal" class="popup">
+                    <!-- Modal content -->
+        <div class="title"><h1>Amemezing News</h1></div>
+        <div class="news-content">
+            <span class="exit">&times;</span>
+        </div>
+    </div>
+
+    <div id="entModal" class="popup" >
+            <!-- Modal content -->
+        <div class="news-content">
+            <button id='entExit' class="exit">&times;</button>
+        </div>
+    </div>
+
+    <div id="sportsModal" class="popup">
+        <!-- Modal content -->
+        <div class="news-content">
+            <span class="exit">&times;</span>
+        </div>
+    </div>
+
+    <div id="techModal" class="popup">
+        <!-- Modal content -->
+        <div class="news-content">
+            <span class="exit">&times;</span>
+        </div>
+    </div>
+    
+</header>
+<!-- END OF ARTICLE MODAL -->
+<!-- END OF HEADER CONTAINER // NAVIGATION -->
+
+
+
+
+
+
+<!-- START OF CONTAINER -->
+<div id="parent" class="contContainer">
+
+    <!-- LEFT ARROW -->
+            <div id='leftbtn' class="arrowleft">
+            </div>
+
+    <!-- MEME CONTAINER // Where the meme will display -->
+    <div id="coverScreen" class="LockOn"></div>
+            <div id="memeImg" class='memes'>
+            </div>
+
+    <!-- RIGHT ARROW -->
+            <div id='rightbtn' class="arrowright">
+            </div>
+
+</div>
+ <!-- END OF CONTAINER-->   
+
+
+<!-- START OF MODAL -->
+<div id="myModal" class="modal">
+
+        <!-- START OF MODAL CONTENT -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h1>Welcome to Amemezing News</h1>
+                <h4>In order to hide the content you're viewing, please click the icon at the top of the screen.</h4>
+                    
+                <p><strong>DISCLAIMER:</strong> Memes are randomly generated. We have no control over meme content. Some images are NSFW. </p>
+            </div>
+        </div>
+        <!-- END OF MODAL CONTENT-->
+</div>
+<!-- END OF MODAL -->
+</main>
+
+<!-- FOOTER -->
+    <footer id="footer" class="main-footer">
+        <p>News Provided by <a href="https://api.org">newsapi.org</a> </p>
+        <p>Memes Provided by <a href="https://meme-api.herokuapp.com/gimme">meme-api.herokuapp.com</a></p>
+    </footer>
+    
+
+
+</main>
+
+
+    <script src="script/index.js"></script>
+</body>
+</html>

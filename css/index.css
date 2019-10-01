@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 5px;
+}
+
+a {
+    color: #818181;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #f1f1f1;
+}
+
+img {
+    width: 40%;
+    max-width: 100%; 
+}
+
+
+.arrowleft{
+    grid-area: left;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 0; 
+    height: 0; 
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent; 
+    border-right:3rem solid #bbb; 
+    position: sticky;
+}
+
+.arrowright {
+    grid-area: right;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 0; 
+    height: 0; 
+    border-top: 3rem solid transparent;
+    border-bottom: 3rem solid transparent;
+    border-left: 3rem solid #bbb;
+    position: sticky;
+}
+
+.memes {
+    grid-area: memes;
+    width: 80%;
+    height: auto;
+    background: url(../img/loading.gif) 600% no-repeat;
+}
+
+.memes > img {
+    width: 100%;
+    background: url(../img/loading.gif) 600% no-repeat;
+}
+
+.main-footer {
+    background-color: #000;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+    font-size: .8rem;
+    width: 100%;
+    color: #fff;
+    bottom: 0;
+
+}
+
+
+.main-footer > p > a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#topheader{
+    display: flex; 
+    flex-direction: row; 
+    align-content: center; 
+    box-shadow: 1px 1px 5px 1px black;
+}
+
+.siteName{
+    display: flex; 
+    position: relative;
+    padding: 1.5rem;
+    justify-content: end;
+}
+
+.contContainer {
+    margin: auto;
+    padding: 20px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns:  1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "left memes right"
+}
+
+section {
+    width: 60%;
+    margin: .5rem 1rem;
+    color: #000;
+}
+
+hr {
+    padding: 1rem 0;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+#topNewsModal {
+    background-color: #fff;
+    color: #000;
+}
+
+/**************** NEWS MODAL *****************/
+
+.popup {
+    width: 100%;
+    height: 100%; 
+    display: none; 
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    padding: 0 3rem;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: #fff
+  }
+
+/* Modal Content */
+.news-content {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+  }
+
+
+
+/* The Exit Button */
+.exit {
+    color: #aaaaaa;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+.exit:hover,
+.exit:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/*************************************************
+MEDIA QUERIES
+**************************************************/
+
+
+/*************************************************
+SMALL  SCREENS
+**************************************************/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .siteName {
+        display: none;
+    }
+    section > img {
+        width: 100%;
+    }
+    .popup {
+        padding: 1rem 0;
+    }
+
+    hr {
+         margin: 3px;
+    }
+
+
+    section>h1{
+        font-size: 1rem;
+    }
+    .title {
+        font-size: .8rem;
+        padding: 1rem;
+    }
+    .iconContainer {
+        display: flex;
+        width: 100%;
+        margin: auto;
+    }
+ 
+    #topheader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 1px 1px 20px 1px black;
+        align-items: center;
+    }
+    .newsbutton {
+        width: 30%;
+    }
+
+    .modal-header {
+        text-align: left;
+    }
+    .modal-header > h1 {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    
+    .modal-header > h4 {
+        font-size: .7rem;
+    }
+
+    .modal-header > p {
+        font-size: .7rem;
+    }
+
+    /* .overlay a {
+        font-size: 20px;
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    } */
+
+    .modal-content{
+        height: auto;
+    }
+        .modal-content {
+            height: 50vh;
+            background-color: #000;
+        }
+    
+
+    .arrowleft { 
+        border-top:1rem solid transparent;
+        border-bottom: 1rem solid transparent; 
+        border-right: 1rem solid #bbb; 
+        display: inline;
+}
+
+    .arrowright {
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-left: 1rem solid #bbb;
+        display: inline;
+
+}
+
+.main-footer {
+    padding: 20px 0;
+}
+
+section > p {
+    font-size: .7rem;
+}
+
+ 
+}
+
+
+
+
+
+/*************************************************
+MEDIUM SCREENS
+**************************************************/
+@media screen and (min-width: 768px) {
+    .modal-content {
+        background-color: lightblue;
+    }
+    .main-footer {
+        background-color: lightblue;
+    }
+    .title {
+        font-size: 1rem;
+    }
+
+    .newsbutton {
+        width: 10%;
+        padding: 1rem;
+    }
+
+
+    .contContainer {
+        width: 90%;
+        display: flex;
+    }
+
+    .memes {
+       margin: 50px 0;
+    }
+    
+    .hamburger {
+    font-size: 3.3rem;
+    }
+
+    .title > h1 {
+        font-size: 2rem;
+    }
+
+    .modal-content{
+        height: 70vh;
+        text-align: center;
+    }
+
+    .modal-content > h1 {
+        font-size: 6rem;
+    }
+
+    .modal-content > h4 {
+        font-size: 3rem;
+    }
+
+    .exit {
+        font-size: 4rem;
+    }
+
+    .popup {
+        padding: 0 4rem;
+    }
+
+.arrowleft {
+    border-top:2rem solid transparent;
+    border-bottom: 2rem solid transparent; 
+    border-right: 2rem solid #bbb; 
+}
+
+.arrowright {
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+    border-left: 2rem solid #bbb;
+
+}
+
+}
+
+
+
+/*The modal (background)*/
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-animation-name: fadeIN;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+/* modal content */
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    color: #fff;
+    
+}
+
+.modal-header {
+    padding: 2px 16px;
+    color: white;
+}
+
+.modal-header > h1 {
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.modal-header > h1 {
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.modal-header > p {
+    padding: 2rem 0;
+}
+
+
+/*close button*/
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* add animation */
+@-webkit-keyframes slideIN {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+@-webkit-keyframes fadeIN {
+    from {opacity:0}
+    to {opacity:1}
+}
+@keyframes fadeIN {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
+
+/*************************************************
+LARGER SCREENS
+**************************************************/
+@media screen and (min-width: 1024px) {
+    .news-content {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .title > h1 {
+        padding: 1.5rem 0;
+    }
+
+    .main-footer,
+    .modal-content,
+    .modal-header { 
+        background-color: pink;
+        color:#000;
+    }
+    .main-footer > p > a {
+        color: #000;
+    }
+
+
+}
