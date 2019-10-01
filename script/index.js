@@ -215,7 +215,9 @@ function addToArray(jsonMemeData) {
 
 
 async function getNewMeme() {
-    const memeData = await fetch(urlEndpoints.memeDataSource).then(results => results.json()).then(jsonMemeData => saveMeme(jsonMemeData));
+    const memeDataJson = await fetch(urlEndpoints.memeDataSource)
+    const memeData = await memeDataJson.json()
+    saveMeme(memeData)
     let index = JSON.parse(localStorage.getItem(CLICK_STORAGE_KEY));
     let click = ++index;
     localStorage.setItem(CLICK_STORAGE_KEY, JSON.stringify(click))
@@ -225,14 +227,28 @@ async function getNewMeme() {
 
 function rightbtn() {
     const rightbtn = document.getElementById('rightbtn')
-    let index = JSON.parse(localStorage.getItem(CLICK_STORAGE_KEY));
-    const memeInStorage = JSON.parse(localStorage.getItem(MEME_STORAGE_KEY));
     //    localStorage.setItem(CLICK_STORAGE_KEY, JSON.stringify(click));
     rightbtn.addEventListener('click', function () {
-        if(index > index.length){
+        const memeInStorage = JSON.parse(localStorage.getItem(MEME_STORAGE_KEY));
+        let index = JSON.parse(localStorage.getItem(CLICK_STORAGE_KEY));
+        index++
+        // console.log(" ")
+        // console.log("INDEX: ", index)
+        // console.log("LENGTH: ", memeInStorage.length);
+        // console.log(" ")
+        if(index < memeInStorage.length){
+            // console.log('testing');
+            let click = index
+            // console.log(click);
+            // console.log(memeInStorage)
+            oldImage = memeInStorage[click]
+            // console.log(oldImage);
             localStorage.setItem(CLICK_STORAGE_KEY, JSON.stringify(click))
+            document.getElementById('memeImg').innerHTML =`<img src='${oldImage}'/>`
+        }else{
+            // console.log("im being run");
+            return getNewMeme();
         }
-        getNewMeme();
     });
 };
 rightbtn()
@@ -245,11 +261,12 @@ function leftbtn() {
     const leftbtn = document.getElementById('leftbtn');
     leftbtn.addEventListener('click', (e) => {
         let index = JSON.parse(localStorage.getItem(CLICK_STORAGE_KEY))
-        console.log(index);
+        // console.log(index);
         if (index > 0) {
             const memeInStorage = JSON.parse(localStorage.getItem(MEME_STORAGE_KEY))
-            console.log(memeInStorage);
+            // console.log(memeInStorage);
             let click = --index
+            // console.log(click)
             localStorage.setItem(CLICK_STORAGE_KEY, JSON.stringify(click))
             lastImage = memeInStorage[click]
             document.getElementById('memeImg').innerHTML = `<img src='${lastImage}'/>`
